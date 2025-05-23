@@ -40,7 +40,7 @@ end
 ---@param pane_id string
 ---@return string
 function tmux:get_pane_content(pane_id)
-	local cmd = { "tmux", "capture-pane", "-p", "-t", pane_id }
+	local cmd = { "tmux", "capture-pane", "-p", "-t", pane_id, "-J" }
 
 	if self.opts.capture_history then
 		table.insert(cmd, "-S-")
